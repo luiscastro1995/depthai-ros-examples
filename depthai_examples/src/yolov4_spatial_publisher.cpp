@@ -42,11 +42,6 @@ int main(int argc, char** argv){
     detectionPipeline.initDepthaiDev(nnPath);
     std::vector<std::shared_ptr<dai::DataOutputQueue>> imageDataQueues = detectionPipeline.getExposedImageStreams();
     std::vector<std::shared_ptr<dai::DataOutputQueue>> nNetDataQueues = detectionPipeline.getExposedNnetStreams();
-    // std::vector<std::shared_ptr<dai::DataOutputQueue>> nSpatialDataQueues = detectionPipeline.getExposedSpatialStreams();
-
-    // std::vector<ros::Publisher> imgPubList;
-    // std::vector<ros::Publisher> nNetPubList;
-    // std::vector<std::string> frameNames;
 
     std::string color_uri = camera_param_uri + "/" + "color.yaml";
 
@@ -76,13 +71,6 @@ int main(int argc, char** argv){
                                                                                                          30);
 
 
-    // Spatial Stream
-
-    // Trial Setup
-    // detectionPublish.addPubisherCallback();
-    // rgbPublish.startPublisherThread();
-
-    // Original Setup   
     detectionPublish.startPublisherThread(); // addPubisherCallback works only when the dataqueue is non blocking.
     rgbPublish.addPubisherCallback();
 

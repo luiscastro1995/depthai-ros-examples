@@ -94,11 +94,6 @@ std::vector<std::shared_ptr<dai::DataOutputQueue>> YoloSpatialDetectionExample::
     return _opImageStreams;
 }
 
-
 std::vector<std::shared_ptr<dai::DataOutputQueue>> YoloSpatialDetectionExample::getExposedNnetStreams(){
     return _opNNetStreams;
 }
-
-// std::vector<std::shared_ptr<dai::DataOutputQueue>> YoloSpatialDetectionExample::getExposedSpatialStreams(){
-//     return _opSpatialStreams;
-// }
